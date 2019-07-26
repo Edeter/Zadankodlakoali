@@ -6,6 +6,7 @@ public class KeyboardInput : MonoBehaviour
 {
   
     [SerializeField] FieldSelection fieldSelection;
+
     bool clicked = false;
     // Start is called before the first frame update
     void Start()

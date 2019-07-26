@@ -5,14 +5,15 @@ using UnityEngine;
 public class JoystickInput : MonoBehaviour
 {
     [SerializeField] FieldSelection fieldSelection;
-    public bool clicked = false;
-    // Update is called once per frame
+    bool clicked = false;
+    void Start() {
+
+    }
     void Update()
-    {
-      // fieldSelection.Movepoint(new Vector3(Mathf.RoundToInt(Input.GetAxisRaw("Joy1X")),Mathf.RoundToInt(Input.GetAxisRaw("Joy1Y")),0));
-      Joy();
-        Debug.Log(Mathf.RoundToInt(Input.GetAxisRaw("Joy1X")));
-        Debug.Log(Mathf.RoundToInt(Input.GetAxisRaw("Joy1Y")));
+    {  
+        
+         Joy();
+
     }
 
         void Joy()
