@@ -6,6 +6,7 @@ public class JoystickInput : MonoBehaviour
 {
     [SerializeField] FieldSelection fieldSelection;
     bool clicked = false;
+    [SerializeField] string ControllerName = "Joy1";
     void Start() {
 
     }
@@ -18,13 +19,13 @@ public class JoystickInput : MonoBehaviour
 
         void Joy()
     {
-         if (Input.GetButtonDown("Jump"))
+         if (Input.GetButtonDown(ControllerName + "Jump"))
         {
             fieldSelection.Click();
         }
             if (clicked)
             {
-                if ((Mathf.RoundToInt(Input.GetAxisRaw("Joy1X"))==0)&&(Mathf.RoundToInt(Input.GetAxisRaw("Joy1Y"))==0))
+                if ((Mathf.RoundToInt(Input.GetAxisRaw(ControllerName + "X"))==0)&&(Mathf.RoundToInt(Input.GetAxisRaw(ControllerName + "Y"))==0))
                 {
                     clicked = false;
                 }
@@ -33,9 +34,9 @@ public class JoystickInput : MonoBehaviour
         
             if (clicked==false)
             {
-             if ((Mathf.RoundToInt(Input.GetAxisRaw("Joy1X"))!=0)||(Mathf.RoundToInt(Input.GetAxisRaw("Joy1Y"))!=0))
+             if ((Mathf.RoundToInt(Input.GetAxisRaw(ControllerName + "X"))!=0)||(Mathf.RoundToInt(Input.GetAxisRaw(ControllerName + "Y"))!=0))
                 {
-                    fieldSelection.Movepoint(new Vector3(Mathf.RoundToInt(Input.GetAxisRaw("Joy1X")),Mathf.RoundToInt(Input.GetAxisRaw("Joy1Y")),0));
+                    fieldSelection.Movepoint(new Vector3(Mathf.RoundToInt(Input.GetAxisRaw(ControllerName + "X")),Mathf.RoundToInt(Input.GetAxisRaw(ControllerName + "Y")),0));
                 clicked = true;   
                 }
                  
